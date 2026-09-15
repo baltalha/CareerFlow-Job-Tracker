@@ -1,0 +1,582 @@
+/* =========================================================
+   APPLICATION CARD
+========================================================= */
+
+.application-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 78px;
+
+  padding: 15px 18px;
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(17, 24, 39, 0.055);
+
+  box-shadow:
+    0 7px 24px rgba(17, 24, 39, 0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LIGHT SWEEP
+========================================================= */
+
+.application-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+
+  transition: left 0.65s ease;
+
+  pointer-events: none;
+}
+
+
+.application-card:hover::before {
+  left: 140%;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.application-card:hover {
+  transform: translateY(-5px);
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-color: rgba(99, 102, 241, 0.12);
+
+  box-shadow:
+    0 16px 40px rgba(17, 24, 39, 0.09),
+    0 0 0 1px rgba(99, 102, 241, 0.025);
+}
+
+
+/* =========================================================
+   COMPANY INFO
+========================================================= */
+
+.company-info {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   COMPANY LOGO
+========================================================= */
+
+.company-logo {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3f4f6,
+      #e5e7eb
+    );
+
+  color: #374151;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  border: 1px solid rgba(17, 24, 39, 0.06);
+
+  box-shadow:
+    0 5px 14px rgba(17, 24, 39, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-radius 0.35s ease;
+}
+
+
+.company-logo::after {
+  content: "";
+
+  position: absolute;
+
+  width: 45px;
+  height: 45px;
+
+  top: -25px;
+  right: -25px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.2),
+      transparent 70%
+    );
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.application-card:hover .company-logo {
+  transform:
+    scale(1.08)
+    rotate(-3deg);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 22px rgba(17, 24, 39, 0.1);
+}
+
+
+.application-card:hover .company-logo::after {
+  transform: scale(1.8);
+}
+
+
+/* =========================================================
+   COMPANY TEXT
+========================================================= */
+
+.company-info > div:last-child {
+  min-width: 0;
+}
+
+
+.company-info h3 {
+  margin: 0;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  color: #111827;
+
+  letter-spacing: -0.015em;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.application-card:hover .company-info h3 {
+  color: #4f46e5;
+
+  transform: translateX(2px);
+}
+
+
+.company-info p {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+
+  color: #9ca3af;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.application-status {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 7px 11px;
+
+  border-radius: 9px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.application-card:hover .application-status {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   APPLIED
+========================================================= */
+
+.application-status.applied {
+  color: #2563eb;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+
+.application-card:hover
+.application-status.applied {
+  box-shadow:
+    0 0 18px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   INTERVIEW
+========================================================= */
+
+.application-status.interview {
+  color: #7c3aed;
+
+  background: rgba(124, 58, 237, 0.08);
+
+  border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+
+.application-card:hover
+.application-status.interview {
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.13);
+}
+
+
+/* =========================================================
+   OFFER
+========================================================= */
+
+.application-status.offer {
+  color: #059669;
+
+  background: rgba(5, 150, 105, 0.08);
+
+  border: 1px solid rgba(5, 150, 105, 0.08);
+}
+
+
+.application-card:hover
+.application-status.offer {
+  box-shadow:
+    0 0 18px rgba(5, 150, 105, 0.14);
+}
+
+
+/* =========================================================
+   REJECTED
+========================================================= */
+
+.application-status.rejected {
+  color: #dc2626;
+
+  background: rgba(220, 38, 38, 0.08);
+
+  border: 1px solid rgba(220, 38, 38, 0.08);
+}
+
+
+.application-card:hover
+.application-status.rejected {
+  box-shadow:
+    0 0 18px rgba(220, 38, 38, 0.12);
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.application-date {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  min-width: 85px;
+
+  text-align: right;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #a1a7b3;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.application-card:hover .application-date {
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   ENTRY ANIMATION
+========================================================= */
+
+.application-card {
+  animation: applicationCardEnter 0.55s ease both;
+}
+
+
+@keyframes applicationCardEnter {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .application-card {
+    gap: 12px;
+
+    padding: 14px;
+
+    min-height: 70px;
+  }
+
+
+  .company-logo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+  }
+
+
+  .application-status {
+    min-width: 70px;
+
+    padding: 6px 8px;
+
+    font-size: 9px;
+  }
+
+
+  .application-date {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .application-card {
+    padding: 12px;
+  }
+
+
+  .company-info {
+    gap: 10px;
+  }
+
+
+  .company-logo {
+    width: 39px;
+    height: 39px;
+  }
+
+
+  .company-info h3 {
+    font-size: 13px;
+  }
+
+
+  .company-info p {
+    font-size: 11px;
+  }
+
+
+  .application-status {
+    min-width: 64px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+.application-priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 9px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.application-priority span {
+  font-size: 10px;
+}
+
+
+/* HIGH */
+
+.application-priority.high {
+  color: #dc2626;
+
+  background: rgba(239, 68, 68, 0.09);
+
+  border: 1px solid rgba(239, 68, 68, 0.12);
+}
+
+
+.application-priority.high span {
+  animation: priorityStar 1.8s ease-in-out infinite;
+}
+
+
+/* MEDIUM */
+
+.application-priority.medium {
+  color: #7c3aed;
+
+  background: rgba(124, 58, 237, 0.09);
+
+  border: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+
+/* NORMAL */
+
+.application-priority.normal {
+  color: #777389;
+
+  background: rgba(119, 115, 137, 0.08);
+
+  border: 1px solid rgba(119, 115, 137, 0.1);
+}
+
+
+.application-card:hover .application-priority {
+  transform: translateY(-2px);
+}
+
+
+@keyframes priorityStar {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+}
+

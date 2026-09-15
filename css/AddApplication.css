@@ -1,0 +1,762 @@
+
+.add-application-page {
+  min-height: calc(100vh - 80px);
+  padding: 58px 30px 100px;
+
+  background:
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(99, 102, 241, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 85%,
+      rgba(139, 92, 246, 0.06),
+      transparent 28%
+    ),
+    #f7f8fc;
+
+  color: #111827;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.add-application-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.add-application-header {
+  margin-bottom: 32px;
+
+  animation:
+    pageEntrance
+    0.7s
+    cubic-bezier(.2, .8, .2, 1)
+    both;
+}
+
+.page-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 11px;
+
+  color: #6366f1;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.page-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #6366f1;
+
+  box-shadow:
+    0 0 0 5px rgba(99, 102, 241, 0.07),
+    0 0 18px rgba(99, 102, 241, 0.4);
+
+  animation: eyebrowPulse 2s ease-in-out infinite;
+}
+
+.add-application-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+}
+
+.add-application-header p {
+  margin: 11px 0 0;
+
+  color: #8d95a1;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.application-form-card {
+  position: relative;
+
+  padding: 34px;
+
+  border:
+    1px solid
+    rgba(17, 24, 39, 0.06);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(250, 251, 255, 0.9)
+    );
+
+  box-shadow:
+    0 22px 65px rgba(17, 24, 39, 0.07);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  animation:
+    cardEntrance
+    0.75s
+    0.1s
+    cubic-bezier(.2, .8, .2, 1)
+    both;
+}
+
+
+/* Decorative glow */
+
+.application-form-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -170px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.12),
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  animation:
+    formGlow
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.form-card-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 25px;
+  margin-bottom: 28px;
+
+  border-bottom:
+    1px solid
+    #f0f1f3;
+}
+
+.form-card-header h2 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: -0.025em;
+}
+
+.form-card-header p {
+  margin: 7px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+.form-card-icon {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #111827;
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  box-shadow:
+    0 10px 24px rgba(17, 24, 39, 0.18);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.form-card-icon::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(99, 102, 241, 0.12);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.application-form-card:hover .form-card-icon {
+  transform:
+    rotate(90deg)
+    scale(1.06);
+
+  box-shadow:
+    0 14px 30px rgba(17, 24, 39, 0.22);
+}
+
+.application-form-card:hover .form-card-icon::after {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 21px;
+}
+
+.form-group label {
+  color: #4b5563;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.025em;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fafbfc;
+
+  color: #1f2937;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #b4bac3;
+}
+
+
+/* Hover */
+
+.form-group input:hover,
+.form-group select:hover {
+  background: white;
+
+  border-color:
+    #d5d9df;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus {
+  background: white;
+
+  border-color:
+    rgba(99, 102, 241, 0.45);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(99, 102, 241, 0.08),
+    0 8px 20px
+    rgba(99, 102, 241, 0.05);
+
+  transform:
+    translateY(-1px);
+}
+
+.form-group:focus-within label {
+  color: #6366f1;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.form-group select {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TWO COLUMNS
+========================================================= */
+
+.form-row {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.form-actions {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 18px;
+  margin-top: 7px;
+
+  border-top:
+    1px solid
+    #f0f1f3;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.cancel-button,
+.submit-button {
+  height: 44px;
+
+  padding: 0 17px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel-button {
+  border:
+    1px solid
+    #e5e7eb;
+
+  background: white;
+
+  color: #6b7280;
+}
+
+.cancel-button:hover {
+  background: #f9fafb;
+
+  border-color:
+    #d9dde3;
+
+  color: #374151;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(17, 24, 39, 0.06);
+}
+
+.cancel-button:active {
+  transform:
+    translateY(0)
+    scale(0.98);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.submit-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-width: 150px;
+
+  border: none;
+
+  background: #111827;
+
+  color: white;
+
+  box-shadow:
+    0 9px 22px
+    rgba(17, 24, 39, 0.16);
+
+  overflow: hidden;
+}
+
+
+/* Shine */
+
+.submit-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 75%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.65s ease;
+}
+
+.submit-button:hover::before {
+  left: 140%;
+}
+
+
+/* Hover */
+
+.submit-button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 15px 30px
+    rgba(17, 24, 39, 0.22);
+}
+
+.submit-button:active {
+  transform:
+    translateY(-1px)
+    scale(0.98);
+}
+
+.submit-button span {
+  position: relative;
+  z-index: 2;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.submit-button:hover span {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes eyebrowPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px
+      rgba(99, 102, 241, 0.07),
+      0 0 15px
+      rgba(99, 102, 241, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px
+      rgba(99, 102, 241, 0.04),
+      0 0 23px
+      rgba(99, 102, 241, 0.55);
+  }
+}
+
+
+@keyframes formGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .add-application-page {
+    padding:
+      40px 16px 60px;
+  }
+
+  .add-application-header h1 {
+    font-size: 31px;
+  }
+
+  .add-application-header p {
+    font-size: 12px;
+  }
+
+  .application-form-card {
+    padding: 22px;
+
+    border-radius: 20px;
+  }
+
+  .form-card-header {
+    align-items: flex-start;
+  }
+
+  .form-card-header p {
+    max-width: 230px;
+
+    line-height: 1.5;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .add-application-page {
+    padding:
+      30px 13px 50px;
+  }
+
+  .add-application-header h1 {
+    font-size: 28px;
+  }
+
+  .application-form-card {
+    padding: 19px;
+  }
+
+  .form-card-icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 46px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+

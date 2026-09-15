@@ -1,0 +1,1618 @@
+
+.application-details-page {
+  min-height: 100vh;
+  padding: 120px 7% 80px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(99, 102, 241, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(139, 92, 246, 0.06),
+      transparent 30%
+    ),
+    #f8fafc;
+  color: #111827;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  border: none;
+  background: transparent;
+
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 8px 0;
+  margin-bottom: 35px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.back-button span {
+  font-size: 20px;
+  transition: transform 0.25s ease;
+}
+
+.back-button:hover {
+  color: #111827;
+  transform: translateX(-3px);
+}
+
+.back-button:hover span {
+  transform: translateX(-4px);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(18px);
+
+  animation: detailsAppear 0.6s ease both;
+}
+
+
+/* ========================================
+   COMPANY
+======================================== */
+
+.details-company {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.details-logo {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #374151
+  );
+
+  color: white;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.18);
+
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+.details-company h1 {
+  margin: 6px 0 4px;
+
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+}
+
+.details-company p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+}
+
+
+/* ========================================
+   EYEBROW
+======================================== */
+
+.page-eyebrow {
+  display: inline-block;
+
+  color: #6366f1;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.details-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border: 1px solid transparent;
+
+  white-space: nowrap;
+
+  animation: statusPulse 3s ease-in-out infinite;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* APPLIED */
+
+.details-status.applied {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #dbeafe;
+}
+
+
+/* INTERVIEW */
+
+.details-status.interview {
+  color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ede9fe;
+}
+
+
+/* OFFER */
+
+.details-status.offer {
+  color: #059669;
+  background: #ecfdf5;
+  border-color: #d1fae5;
+}
+
+
+/* REJECTED */
+
+.details-status.rejected {
+  color: #dc2626;
+  background: #fef2f2;
+  border-color: #fee2e2;
+}
+
+
+/* ========================================
+   INFORMATION GRID
+======================================== */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 22px;
+}
+
+
+.detail-card {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  min-height: 150px;
+
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.86);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  overflow: hidden;
+}
+
+.detail-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6,
+    transparent
+  );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c7d2fe;
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.detail-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* ========================================
+   DETAIL ICON
+======================================== */
+
+.detail-card-icon {
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #f1f5f9;
+
+  color: #6366f1;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.detail-card:hover .detail-card-icon {
+  transform: rotate(-5deg) scale(1.08);
+
+  background: #eef2ff;
+}
+
+
+/* ========================================
+   DETAIL TEXT
+======================================== */
+
+.detail-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.detail-card h2 {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 17px;
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+
+/* ========================================
+   STATUS SELECT
+======================================== */
+
+.status-select {
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.status-select:hover {
+  background: white;
+  border-color: #c7d2fe;
+}
+
+.status-select:focus {
+  background: white;
+
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+
+/* ========================================
+   ACTIVITY CARD
+======================================== */
+
+.activity-card {
+  margin-top: 22px;
+
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 15px 45px rgba(15, 23, 42, 0.05);
+
+  animation: detailsAppear 0.7s ease both;
+}
+
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.activity-header h2 {
+  margin: 7px 0 0;
+
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.activity-count {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  color: #6366f1;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+
+
+.timeline {
+  position: relative;
+  padding-top: 30px;
+}
+
+
+/* ========================================
+   TIMELINE ITEM
+======================================== */
+
+.timeline-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+
+  align-items: center;
+  gap: 18px;
+
+  min-height: 76px;
+
+  padding: 10px 14px;
+
+  border-radius: 18px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.timeline-item:hover {
+  background: rgba(248, 250, 252, 0.9);
+
+  transform: translateX(4px);
+}
+
+
+/* ========================================
+   TIMELINE MARKER
+======================================== */
+
+.timeline-marker {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  z-index: 2;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ========================================
+   APPLIED
+======================================== */
+
+.timeline-item.applied .timeline-marker {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #6366f1
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(59, 130, 246, 0.25);
+}
+
+
+/* ========================================
+   INTERVIEW
+======================================== */
+
+.timeline-item.interview .timeline-marker {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #a855f7
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(124, 58, 237, 0.25);
+}
+
+
+/* ========================================
+   OFFER
+======================================== */
+
+.timeline-item.offer .timeline-marker {
+  background:
+    linear-gradient(
+      135deg,
+      #059669,
+      #10b981
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(16, 185, 129, 0.28);
+}
+
+
+/* ========================================
+   REJECTED
+======================================== */
+
+.timeline-item.rejected .timeline-marker {
+  background:
+    linear-gradient(
+      135deg,
+      #dc2626,
+      #ef4444
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(239, 68, 68, 0.25);
+}
+
+
+/* ========================================
+   MUTED MARKER
+======================================== */
+
+.timeline-item.muted .timeline-marker {
+  background: #f1f5f9;
+
+  color: #94a3b8;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: none;
+}
+
+
+/* ========================================
+   MARKER HOVER
+======================================== */
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+
+/* ========================================
+   ACTIVE GLOW
+======================================== */
+
+.timeline-item.active .timeline-marker::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border-radius: 18px;
+
+  border: 1px solid currentColor;
+
+  opacity: 0;
+
+  animation: timelineGlow 2.4s ease-in-out infinite;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.timeline-content {
+  min-width: 0;
+}
+
+.timeline-content strong {
+  display: block;
+
+  color: #1e293b;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  letter-spacing: -0.1px;
+}
+
+.timeline-content p {
+  margin: 5px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* ========================================
+   DATE
+======================================== */
+
+.timeline-item > span {
+  padding: 7px 10px;
+
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   CONNECTING LINE
+======================================== */
+
+.timeline-line {
+  position: relative;
+
+  width: 2px;
+  height: 30px;
+
+  margin-left: 34px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #cbd5e1,
+      #e2e8f0
+    );
+
+  border-radius: 10px;
+}
+
+
+/* ========================================
+   ACTIVE CONNECTING LINE
+======================================== */
+
+.timeline-item.active + .timeline-line {
+  background:
+    linear-gradient(
+      to bottom,
+      #6366f1,
+      #c4b5fd
+    );
+}
+
+
+/* ========================================
+   STATUS-SPECIFIC LINES
+======================================== */
+
+.timeline-item.offer + .timeline-line {
+  background:
+    linear-gradient(
+      to bottom,
+      #10b981,
+      #a7f3d0
+    );
+}
+
+.timeline-item.rejected + .timeline-line {
+  background:
+    linear-gradient(
+      to bottom,
+      #ef4444,
+      #fecaca
+    );
+}
+
+
+/* ========================================
+   ACTIVE CONTENT
+======================================== */
+
+.timeline-item.active .timeline-content strong {
+  color: #0f172a;
+}
+
+
+/* ========================================
+   OFFER CONTENT
+======================================== */
+
+.timeline-item.offer .timeline-content strong {
+  color: #047857;
+}
+
+
+/* ========================================
+   REJECTED CONTENT
+======================================== */
+
+.timeline-item.rejected .timeline-content strong {
+  color: #b91c1c;
+}
+
+
+/* ========================================
+   INTERVIEW CONTENT
+======================================== */
+
+.timeline-item.interview .timeline-content strong {
+  color: #6d28d9;
+}
+
+
+/* ========================================
+   APPLIED CONTENT
+======================================== */
+
+.timeline-item.applied .timeline-content strong {
+  color: #2563eb;
+}
+
+
+/* ========================================
+   STATUS GLOW ANIMATION
+======================================== */
+
+@keyframes timelineGlow {
+
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  35% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+
+  70% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+
+}
+
+
+/* ========================================
+   TIMELINE ENTRY ANIMATION
+======================================== */
+
+.timeline-item {
+  animation: timelineEntry 0.55s ease both;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.timeline-item:nth-child(5) {
+  animation-delay: 0.19s;
+}
+
+.timeline-item:nth-child(7) {
+  animation-delay: 0.26s;
+}
+
+
+@keyframes timelineEntry {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE TIMELINE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .timeline-item {
+    grid-template-columns: 44px 1fr;
+
+    gap: 14px;
+
+    padding: 8px;
+  }
+
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-item > span {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+
+  .timeline-line {
+    margin-left: 27px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .timeline-item {
+    gap: 12px;
+  }
+
+  .timeline-content strong {
+    font-size: 13px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+  }
+
+}
+
+
+
+/* ========================================
+   DANGER ZONE
+======================================== */
+
+.danger-zone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 22px;
+  padding: 28px 32px;
+
+  background: #fffafa;
+
+  border: 1px solid #fee2e2;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(127, 29, 29, 0.03);
+}
+
+.danger-zone h2 {
+  margin: 6px 0;
+
+  color: #991b1b;
+
+  font-size: 18px;
+}
+
+.danger-zone p {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.delete-button {
+  flex-shrink: 0;
+
+  padding: 12px 20px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 12px;
+
+  background: #fff;
+
+  color: #dc2626;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.delete-button:hover {
+  background: #dc2626;
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(220, 38, 38, 0.2);
+}
+
+.delete-button:active {
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   NOT FOUND
+======================================== */
+
+.not-found-card {
+  max-width: 560px;
+
+  margin: 100px auto;
+
+  padding: 55px 40px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.08);
+
+  animation: detailsAppear 0.5s ease both;
+}
+
+.not-found-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+
+  border-radius: 20px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.not-found-card h1 {
+  margin: 10px 0;
+
+  font-size: 30px;
+
+  letter-spacing: -1px;
+}
+
+.not-found-card p {
+  margin: 0 auto 28px;
+
+  max-width: 400px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.not-found-card button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #111827;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.not-found-card button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.2);
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes detailsAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.04);
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .application-details-page {
+    padding: 100px 5% 60px;
+  }
+
+  .details-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 26px;
+  }
+
+  .details-company {
+    width: 100%;
+  }
+
+  .details-status {
+    align-self: flex-start;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card {
+    padding: 24px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .timeline-item > span {
+    grid-column: 2;
+  }
+
+  .danger-zone {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 25px;
+  }
+
+  .delete-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .application-details-page {
+    padding: 90px 20px 50px;
+  }
+
+  .details-company {
+    gap: 15px;
+  }
+
+  .details-logo {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    font-size: 22px;
+  }
+
+  .details-company h1 {
+    font-size: 27px;
+  }
+
+  .details-company p {
+    font-size: 14px;
+  }
+
+  .activity-header h2 {
+    font-size: 20px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+  }
+
+}
+
+/* ========================================
+   INTERVIEW TRACKER
+======================================== */
+
+.interview-tracker {
+  position: relative;
+  margin-top: 22px;
+  padding: 32px;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(139, 92, 246, 0.10),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, 0.9);
+  border: 1px solid #e2e8f0;
+  border-radius: 26px;
+  box-shadow:
+    0 15px 45px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  animation: detailsAppear 0.7s ease both;
+}
+
+
+/* TOP GRADIENT LINE */
+
+.interview-tracker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      #6366f1,
+      #8b5cf6,
+      #a855f7,
+      transparent
+    );
+}
+
+
+/* ========================================
+   INTERVIEW HEADER
+======================================== */
+
+.interview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.interview-header h2 {
+  margin: 7px 0 5px;
+  color: #0f172a;
+  font-size: 24px;
+  letter-spacing: -0.6px;
+}
+
+.interview-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.interview-header-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(99, 102, 241, 0.25);
+
+  animation: interviewIconFloat 4s ease-in-out infinite;
+}
+
+
+/* ========================================
+   INTERVIEW FORM
+======================================== */
+
+.interview-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-top: 28px;
+}
+
+
+/* ========================================
+   FIELD
+======================================== */
+
+.interview-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.interview-field label {
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   INPUT / SELECT
+======================================== */
+
+.interview-field input,
+.interview-field select,
+.interview-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  background: #f8fafc;
+
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* INPUT */
+
+.interview-field input,
+.interview-field select {
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+
+/* TEXTAREA */
+
+.interview-field textarea {
+  min-height: 130px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.interview-field input:hover,
+.interview-field select:hover,
+.interview-field textarea:hover {
+  background: white;
+  border-color: #c7d2fe;
+}
+
+
+/* ========================================
+   FOCUS
+======================================== */
+
+.interview-field input:focus,
+.interview-field select:focus,
+.interview-field textarea:focus {
+  background: white;
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10);
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.interview-field input::placeholder,
+.interview-field textarea::placeholder {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   NOTES
+======================================== */
+
+.interview-notes {
+  grid-column: 1 / -1;
+}
+
+
+/* ========================================
+   SAVED MESSAGE
+======================================== */
+
+.interview-saved {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 22px;
+  padding: 9px 13px;
+
+  border-radius: 10px;
+
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+
+  color: #15803d;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.interview-saved span {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+  color: white;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes interviewIconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+
+/* ========================================
+   INTERVIEW TRACKER RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .interview-tracker {
+    padding: 25px;
+  }
+
+  .interview-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .interview-notes {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .interview-tracker {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .interview-header {
+    align-items: flex-start;
+  }
+
+  .interview-header h2 {
+    font-size: 20px;
+  }
+
+  .interview-header p {
+    font-size: 12px;
+  }
+
+  .interview-header-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 17px;
+  }
+
+  .interview-field input,
+  .interview-field select {
+    min-height: 44px;
+  }
+
+}

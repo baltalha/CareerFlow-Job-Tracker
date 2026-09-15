@@ -1,0 +1,672 @@
+/* ========================================
+   CAREER CENTER
+======================================== */
+
+.career-center-page {
+  min-height: calc(100vh - 80px);
+
+  padding: 55px 6% 80px;
+
+  background:
+    radial-gradient(
+      circle at 8% 5%,
+      rgba(99, 102, 241, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 15%,
+      rgba(168, 85, 247, 0.09),
+      transparent 28%
+    ),
+    #f8fafc;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.career-center-container {
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.career-center-header {
+  max-width: 750px;
+
+  margin: 0 auto 40px;
+
+  text-align: center;
+
+  animation: careerHeaderIn 0.7s ease both;
+}
+
+.career-center-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border: 1px solid #ddd6fe;
+  border-radius: 999px;
+
+  background: #f5f3ff;
+
+  color: #7c3aed;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.career-center-eyebrow::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8b5cf6;
+
+  box-shadow:
+    0 0 0 4px rgba(139, 92, 246, 0.10);
+}
+
+.career-center-header h1 {
+  margin: 17px 0 12px;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 5vw, 54px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2.5px;
+}
+
+.career-center-header h1 span {
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6,
+      #c026d3
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.career-center-header p {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   CAREER HEALTH
+======================================== */
+
+.career-health-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 220px;
+
+  padding: 35px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid #ddd6fe;
+
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(99, 102, 241, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #faf5ff
+    );
+
+  box-shadow:
+    0 25px 60px rgba(99, 102, 241, 0.08);
+
+  overflow: hidden;
+
+  animation: careerCardIn 0.7s ease 0.1s both;
+}
+
+.career-health-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  right: -70px;
+  top: -80px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #7c3aed;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.career-health-card h2 {
+  margin: 0;
+
+  color: #4f46e5;
+
+  font-size: 64px;
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.career-health-card h2 small {
+  margin-left: 5px;
+
+  color: #94a3b8;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.career-health-card p {
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* ========================================
+   TODAY ACTIONS
+======================================== */
+
+.today-actions {
+  padding: 32px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.06);
+
+  animation: careerCardIn 0.7s ease 0.2s both;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 22px;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* ========================================
+   ACTION LIST
+======================================== */
+
+.action-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.career-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 18px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.career-action:hover {
+  transform: translateX(5px);
+
+  border-color: #c4b5fd;
+
+  background: #faf5ff;
+
+  box-shadow:
+    0 10px 25px rgba(124, 58, 237, 0.07);
+}
+
+
+/* ========================================
+   ACTION NUMBER
+======================================== */
+
+.action-number {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #f5f3ff;
+
+  color: #7c3aed;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+
+/* ========================================
+   ACTION CONTENT
+======================================== */
+
+.action-content {
+  flex: 1;
+}
+
+.action-content h3 {
+  margin: 0 0 5px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.action-content p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   ACTION ARROW
+======================================== */
+
+.action-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #7c3aed;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.career-action:hover .action-arrow {
+  transform: translateX(4px);
+
+  background: #ede9fe;
+}
+/* ========================================
+   HEALTH PROGRESS
+======================================== */
+
+.health-content {
+  position: relative;
+  z-index: 2;
+}
+
+.health-progress {
+  position: absolute;
+
+  right: 50px;
+  bottom: 45px;
+
+  width: 320px;
+
+  z-index: 2;
+}
+
+.health-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.health-progress-header strong {
+  color: #7c3aed;
+
+  font-size: 12px;
+}
+
+.health-progress-track {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    inset 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.health-progress-bar {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6366f1,
+      #8b5cf6,
+      #c026d3
+    );
+
+  box-shadow:
+    0 4px 12px rgba(124, 58, 237, 0.22);
+
+  transition: width 0.8s ease;
+}
+/* DYNAMIC CAREER ACTIONS */
+
+.action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.06);
+}
+
+.career-action.followup:hover {
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.career-action.interview:hover {
+  border-color: #a5b4fc;
+  background: #eef2ff;
+}
+
+.career-action.skill:hover {
+  border-color: #c4b5fd;
+  background: #faf5ff;
+}
+
+.actions-empty {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 22px;
+
+  border: 1px solid #dcfce7;
+  border-radius: 16px;
+
+  background: #f0fdf4;
+}
+
+.actions-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #dcfce7;
+  color: #16a34a;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.actions-empty h3 {
+  margin: 0 0 4px;
+
+  color: #166534;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.actions-empty p {
+  margin: 0;
+
+  color: #65a30d;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+
+  .health-progress {
+    position: static;
+
+    width: 100%;
+
+    margin-top: 25px;
+  }
+
+  .career-health-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes careerHeaderIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes careerCardIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .career-center-page {
+    padding: 40px 20px 60px;
+  }
+
+  .career-health-card {
+    min-height: 180px;
+
+    padding: 28px;
+  }
+
+  .today-actions {
+    padding: 24px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .career-center-page {
+    padding: 30px 14px 50px;
+  }
+
+  .career-center-header h1 {
+    font-size: 38px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .career-health-card {
+    padding: 25px;
+  }
+
+  .career-health-card h2 {
+    font-size: 54px;
+  }
+
+  .today-actions {
+    padding: 20px;
+  }
+
+  .career-action {
+    gap: 12px;
+
+    padding: 14px;
+  }
+
+  .action-number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .action-content h3 {
+    font-size: 12px;
+  }
+
+  .action-content p {
+    font-size: 10px;
+  }
+
+}
